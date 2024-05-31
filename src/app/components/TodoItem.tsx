@@ -22,7 +22,8 @@ export const TodoItem: React.FC<TodoItemProps> = ({
       className={
         "flex items-center justify-between px-4 py-2 group" +
         (hasBorder ? " border-b" : "") // Conditionally adding a border class if hasBorder is true
-      }>
+      }
+    >
       <div className="flex items-center">
         <input
           className="h-5 w-5 text-blue-500"
@@ -33,10 +34,12 @@ export const TodoItem: React.FC<TodoItemProps> = ({
         <span
           className={`ml-2 text-sm text-white ${
             todo.isCompleted ? "text-gray-500 line-through" : "text-gray-900" // Apply different styles if the todo is completed
-          }`}>
+          }`}
+        >
           {todo.assignedTo && (
             <span className="border rounded-md text-xs py-[2px] px-1 mr-2  border-purple-700 uppercase bg-purple-400 text-black font-medium">
-              {todo.assignedTo} {/* Display the assigned person's name if available */}
+              {todo.assignedTo}{" "}
+              {/* Display the assigned person's name if available */}
             </span>
           )}
           {todo.text} {/* Display the todo text */}
@@ -45,14 +48,16 @@ export const TodoItem: React.FC<TodoItemProps> = ({
       <div>
         <button
           onClick={() => deleteTodo(todo.id)} // Delete the todo on button click
-          className="text-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          className="text-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-5 h-5">
+            className="w-5 h-5"
+          >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -65,14 +70,16 @@ export const TodoItem: React.FC<TodoItemProps> = ({
             const name = prompt("Assign person to this task:");
             assignPerson(todo.id, name);
           }}
-          className="ml-2 text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          className="ml-2 text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-5 h-5">
+            className="w-5 h-5"
+          >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"

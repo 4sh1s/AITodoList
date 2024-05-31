@@ -6,16 +6,14 @@ import { useState } from "react"; // Importing the useState hook from React
 import { Todo } from "../types/todo"; // Importing the Todo type
 import { useCopilotAction, useCopilotReadable } from "@copilotkit/react-core"; // Importing copilot state users
 
-
 // Defining the TodoList component as a functional component
 export const TodoList: React.FC = () => {
-   // State to hold the list of todos
+  // State to hold the list of todos
   const [todos, setTodos] = useState<Todo[]>([]);
   // State to hold the current input value
   const [input, setInput] = useState("");
 
-
-   // Function to add a new todo
+  // Function to add a new todo
   const addTodo = () => {
     if (input.trim() !== "") {
       // Check if the input is not empty
@@ -46,12 +44,12 @@ export const TodoList: React.FC = () => {
     );
   };
 
-    // Function to delete a todo
+  // Function to delete a todo
   const deleteTodo = (id: string) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-    // Function to assign a person to a todo
+  // Function to assign a person to a todo
   const assignPerson = (id: string, person: string | null) => {
     setTodos(
       todos.map((todo) =>
@@ -187,9 +185,6 @@ export const TodoList: React.FC = () => {
     render: "Deleting a todo item...",
   });
 
-
-
-
   return (
     <div>
       <div className="flex mb-4">
@@ -201,7 +196,8 @@ export const TodoList: React.FC = () => {
         />
         <button
           className="bg-blue-500 rounded-md p-2 text-white"
-          onClick={addTodo}>
+          onClick={addTodo}
+        >
           Add Todo
         </button>
       </div>
@@ -219,6 +215,6 @@ export const TodoList: React.FC = () => {
           ))}
         </div>
       )}
-     </div>
+    </div>
   );
 };
